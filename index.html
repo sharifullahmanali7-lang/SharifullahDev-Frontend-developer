@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SharifullahDev | Frontend developer</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+<link rel="icon" href="./images/123 (2).png" type="image/png">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="./images/logo.png" alt="logo" />
+        <span class="logo-text">Sharifullah <span>Manali</span></span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- 🌗 THEME TOGGLE BUTTON -->
+      <button id="theme-toggle" class="theme-btn">
+        <i class="ri-sun-line"></i>
+      </button>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <div class="hero-text">
+          <h4>BUILD MODERN WEBSITES</h4>
+
+          <h1>
+            Hi, I'm <span class="name">Sharifullah Manali</span><br />
+            Web Developer
+          </h1>
+
+          <p>
+            I design modern, fast, and responsive websites using HTML, CSS &
+            JavaScript.
+          </p>
+        </div>
+
+        <div class="hero-img">
+          <img src="./images/1.jpg" alt="profile" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="about" id="about">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-container">
+        <p>
+          Hi, I am Sharifullah Manali,I am a passionate and detail-oriented web developer who builds modern, responsive, and user-friendly websites. I specialize in creating clean and efficient code using HTML, CSS, and JavaScript, and I enjoy turning ideas into real, interactive digital experiences.
+
+I focus on performance, design quality, and smooth user experience. I am always learning new technologies and improving my skills to build better and more advanced web applications.
+
+My goal is to create websites that are not only visually appealing but also fast, accessible, and easy to use for everyone.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section class="features" id="features">
+      <h2 class="section-title">My Skills</h2>
+
+      <div class="features-grid">
+        <div class="card">
+          <i class="ri-code-line"></i>
+          <h3>Clean Code</h3>
+        </div>
+
+        <div class="card">
+          <i class="ri-smartphone-line"></i>
+          <h3>Responsive Design</h3>
+        </div>
+
+        <div class="card">
+          <i class="ri-rocket-line"></i>
+          <h3>Fast Performance</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="contact" id="contact">
+      <h2 class="section-title">Lets Work toghter</h2>
+
+      <div class="contact-wrapper">
+        <!-- EMAIL -->
+        <a
+          href="https://mail.google.com/mail/?view=cm&to=sharifullahmanali428@gmail.com"
+          target="_blank"
+          class="contact-card"
+        >
+          <div class="icon">
+            <i class="ri-mail-line"></i>
+          </div>
+          <div class="text">
+            <h3>Email</h3>
+            <p>sharifullahmanali428@gmail.com</p>
+          </div>
+        </a>
+
+        <!-- PHONE -->
+        <a href="tel:+93775766044" class="contact-card">
+          <div class="icon">
+            <i class="ri-phone-line"></i>
+          </div>
+          <div class="text">
+            <h3>Phone</h3>
+            <p>+93 775 766 044</p>
+          </div>
+        </a>
+
+        <!-- WHATSAPP -->
+        <a
+          href="https://wa.me/93775766044"
+          target="_blank"
+          class="contact-card"
+        >
+          <div class="icon">
+            <i class="ri-whatsapp-line"></i>
+          </div>
+          <div class="text">
+            <h3>WhatsApp</h3>
+            <p>Chat with me</p>
+          </div>
+        </a>
+      </div>
+      
+    </section>
+    </section>
+    </div>
+      </a>
+</div>
+
+</div>
+<footer class="footer">
+  
+  <div class="footer-left">
+    <div class="version">
+      VERSION<br>
+      <span>2026 © Edition</span>
+    </div>
+
+    
+  </div>
+
+  <div class="footer-right">
+    <div class="social-title">SOCIALS</div>
+    <div class="social-links">
+     
+<a href="https://www.youtube.com/@SharifulllahManaliWebDeveloper"target="_blank">youtube</a>     
+      <a href="https://github.com/sharifullahmanali-dev" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+</footer>
+    
+    <!-- ================= SCRIPT ================= -->
+    <script>
+      const toggleBtn = document.getElementById("theme-toggle");
+      const body = document.body;
+
+      // load saved theme
+      if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light");
+        toggleBtn.innerHTML = '<i class="ri-moon-line"></i>';
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        body.classList.toggle("light");
+
+        if (body.classList.contains("light")) {
+          toggleBtn.innerHTML = '<i class="ri-moon-line"></i>';
+          localStorage.setItem("theme", "light");
+        } else {
+          toggleBtn.innerHTML = '<i class="ri-sun-line"></i>';
+          localStorage.setItem("theme", "dark");
+        }
+      });
+      
+    </script>
+  </body>
+</html>
