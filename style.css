@@ -12,7 +12,16 @@ html {
 }
 
 body {
-  background: #0f172a;
+  height: 100vh;
+  background-color: #070d2b;
+
+  /* Grid Lines */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
   color: #ffffff;
   overflow-x: hidden;
   letter-spacing: 0.2px;
@@ -22,10 +31,17 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  padding: 18px 60px;
-  position: sticky;
+  justify-content: space-between;
+
+  position: fixed;
   top: 0;
-  backdrop-filter: blur(12px);
+  left: 0;
+  width: 100%;
+
+  padding: 18px 60px;
+  /* background: rgba(0, 0, 0, 0.3); important for blur to show */
+  backdrop-filter: blur(5px);
+
   z-index: 1000;
 }
 
@@ -157,11 +173,13 @@ body {
 .hero-text h4 {
   color: #94a3b8;
   font-size: 15px;
+  margin-top: 20px;
 }
 
 .hero-text h1 {
   font-size: px;
   margin: 15px 0;
+  margin: 20px;
 }
 
 .name {
@@ -526,7 +544,7 @@ button:hover {
   padding: 100px 10%;
   text-align: center;
   position: relative;
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
 }
 .section-title {
   font-size: 40px;
@@ -848,4 +866,142 @@ body.light h3 {
 
 .social-links a:hover::after {
   width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  background: #0a0f2c;
+  color: white;
+}
+
+/* Section */
+.skills {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.skills h2 {
+  color: #00c3ff;
+  margin-bottom: 40px;
+}
+
+/* Grid */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Skill Box */
+.skill {
+  background: #11173a;
+  padding: 20px;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.skill img {
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.skill p {
+  font-size: 14px;
+}
+
+/* Hover Effect */
+.skill:hover {
+  transform: scale(1.1);
+  background: #1a237e;
+}
+
+/* ================= SKILLS RESPONSIVE ================= */
+
+/* Tablets */
+@media (max-width: 768px) {
+  /* .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; */
+}
+
+.skill {
+  width: 100px;
+  height: 100px;
+}
+
+.skill img {
+  width: 35px;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .skill {
+    width: 90px;
+    height: 90px;
+  }
+
+  .skill img {
+    width: 30px;
+  }
+}
+
+/* ================= SKILLS COLORS ================= */
+
+/* DARK MODE (default) */
+.skill {
+  background: #11173a;
+  color: #ffffff;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* icon glow in dark mode */
+.skill img {
+  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.6));
+}
+
+/* LIGHT MODE */
+body.light .skill {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* LIGHT MODE ICON STYLE (muted clean look) */
+body.light .skill img {
+  filter: grayscale(100%) brightness(1.2);
+  opacity: 0.75;
+}
+
+/* hover effect (both modes) */
+.skill:hover {
+  transform: scale(1.1);
+  background: #1a237e;
+  border-color: #3b82f6;
+}
+
+/* light mode hover (bring color back) */
+body.light .skill:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
 }
